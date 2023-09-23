@@ -19,7 +19,7 @@ setup(
     author_email='pechnikov@mobigroup.ru',
     license='BSD-3-Clause',
     packages=['pygmtsar'],
-    install_requires=['xarray>=0.19.0',
+    install_requires=['xarray==2023.1.0',
                       'importlib-metadata',
                       'numpy>=1.22.4',
                       'pandas>=1.4',

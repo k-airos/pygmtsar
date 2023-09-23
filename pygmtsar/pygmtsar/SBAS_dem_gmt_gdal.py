@@ -101,9 +101,14 @@ class SBAS_dem_gmt_gdal(SBAS_reframe):
         import subprocess
         from tqdm.auto import tqdm
         import joblib
+
+        
+        cell_size = 0.000833333333333
+        if product == 'STRM1':
+            cell_size = 0.000277777777778
         # 0.000833333333333 cell size for SRTM3 90m
         # 0.000277777777778 cell size for SRTM1 30m
-        scale = 0.000833333333333/90
+        scale = cell_size/90
         
         if self.dem_filename is not None:
             print ('NOTE: DEM exists, ignore the command. Use SBAS.set_dem(None) to allow new DEM downloading')
